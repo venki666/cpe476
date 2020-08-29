@@ -29,7 +29,7 @@
 3. Now, it is time to create a Virtual Machine. Follow the instructions below to proceed.
 4. Open VirtualBox and click on the "New" button.
 5. Choose a name for your virtual machine with its location. Based on the name you entered, VirtualBox will try to predict the "Type" and "Version". Otherwise, from the drop-down menu, select "Linux" as the type and "Ubuntu" as the version and click on the "Next" button.
-6. With the help of the slider, choose the amount of memory (RAM) to be allocated to the virtual machine. (The recommended memory size is 1024 MB (1 GB). Please note that this memory will only be used while using a virtual machine).
+6. With the help of the slider, choose the amount of memory (RAM) to be allocated to the virtual machine. (The recommended memory size is 3 GB. Please note that this memory will only be used while using a virtual machine).
 7. Select "Create a virtual hard disk now" option and click on the "Create" button to proceed.
 8. Choose the "VDI (VirtualBox Disk Image)" option and click "Next". 
 9. Again, click on the "Next" button. 
