@@ -83,13 +83,3 @@ Replace 192.168.0.10 with the IP address that you identified in step 3.
 That’s all. You have successfully boot up your Raspberry Pi at first boot with wifi only, no keyboard, no monitor, and no ethernet cable required.
 
 
-
-
-<<<<<<< HEAD
-=======
-1. First install Typora
-2. Clone your empty repost....
-3. This is a test 
-4. Demo in Windows
->>>>>>> 8520f0975624e92d9ecf5ec6c5f78bf18c72cfc9
-
