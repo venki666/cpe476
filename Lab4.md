@@ -1,6 +1,6 @@
 ## RPI - Romi 32U4 Control Board -  I²C bridge test
 
-With the Raspberry Pi 3 or Zero W, Wi-Fi is built-in, and you should not have to do anything to configure it other than selecting a Wi-Fi network. Otherwise, you’ll need a Wi-Fi dongle. If you are using an Edimax or similar Wi-Fi adapter with the 8192cu module, you will notice frustrating delays or dropped connections unless you disable power management. Create a module configuration file:
+With the Raspberry Pi 4, 3 or Zero W, Wi-Fi is built-in, and you should not have to do anything to configure it other than selecting a Wi-Fi network. Otherwise, you’ll need a Wi-Fi dongle. If you are using an Edimax or similar Wi-Fi adapter with the 8192cu module, you will notice frustrating delays or dropped connections unless you disable power management. Create a module configuration file:
 
 ```
 sudo nano /etc/modprobe.d/8192cu.conf
@@ -9,8 +9,11 @@ sudo nano /etc/modprobe.d/8192cu.conf
 
 and add the following lines:
 
-##### Disable power management
+```
+#Disable power management
 options 8192cu rtw_power_mgnt=0 rtw_enusbss=0
+```
+
 After setting up Wi-Fi, enable I²C on your Raspberry Pi by running
 
 ```
@@ -28,6 +31,7 @@ sudo nano /boot/config.txt
 At the end, add the line:
 
 dtparam=i2c_arm_baudrate=400000
+
 Note that the Raspberry Pi 3 performs frequency scaling (reducing the speed of the processor when there are no intensive computations running) that affects the I²C clock, so even when you increase the frequency to 400 kHz, it will not always run that fast. In our tests it usually ran at half of the specified speed, only jumping up to the full speed occasionally or when under significant CPU load.
 
 If you want to log in as a user other than the default pi, give yourself access to the I²C devices with this command, replacing <user> with your username:
@@ -64,7 +68,11 @@ The Romi 32U4 Control Board is configured to power the Raspberry Pi from its 5 V
 
 To run our Raspberry Pi example code, you should make sure Python 3 and a couple of required libraries are installed. Install them with:
 
+```
 sudo apt-get install python3 python3-flask python3-smbus
+```
+
+
 Next, download the pololu-rpi-slave-arduino-library code from our GitHub repository. You can do this a number of ways, but if you are unfamiliar with Git, the simplest is to do the following, replacing <version> with the version of the library that you installed for your Arduino IDE (e.g. “2.0.0”).
 
 ```

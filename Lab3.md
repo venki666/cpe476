@@ -1,4 +1,4 @@
-### Install and test Raspbian on Raspberri Pi W/4/3
+## Install and test Raspbian on Raspberri Pi W/4/3
 
 ##### Installing operating system images
 
