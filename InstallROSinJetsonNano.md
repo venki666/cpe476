@@ -4,8 +4,6 @@
 ROS is the natural choice when building a multi-sensory autonomous robot.  
 After setting up the Jetson Nano with its JetPack image using our [Getting Started](https://www.stereolabs.com/blog/getting-started-with-jetson-nano/) guide, we are going to install the latest version of ROS that runs on Ubuntu 18 Bionic Beaver: [Melodic Morenia](http://wiki.ros.org/melodic).
 
-![](https://cdn.stereolabs.com/blog/wp-content/uploads/2019/03/1024px-Melodic_Morenia-3.png)
-
 #### Installation
 
 Open a new terminal by pressing **Ctrl + Alt + t** or executing the “**Terminal**” application using the Ubuntu 18 launch system.
