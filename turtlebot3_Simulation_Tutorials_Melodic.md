@@ -47,7 +47,7 @@ Three simulation environments are prepared for TurtleBot3. Please select one of 
 **Please make sure to completely terminate other Simulation world before launching a new world.**
 
 1.  Empty World  
-    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_empty_world.png){:height="480px" width="320px"}
+    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_empty_world.png)
     
     ```
     $ export TURTLEBOT3_MODEL=burger
@@ -55,7 +55,7 @@ Three simulation environments are prepared for TurtleBot3. Please select one of 
     ```
     
 2.  TurtleBot3 World  
-    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_world_bugger.png =480x320)
+    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_world_bugger.png)
     
     ```
     $ export TURTLEBOT3_MODEL=waffle
@@ -63,7 +63,7 @@ Three simulation environments are prepared for TurtleBot3. Please select one of 
     ```
     
 3.  TurtleBot3 House  
-    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_house.png =480x320)
+    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_house.png)
     
     ```
     $ export TURTLEBOT3_MODEL=waffle_pi
@@ -145,13 +145,13 @@ $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 
 When the map is created successfully, open a new terminal from Remote PC with `Ctrl` + `Alt` + `T` and save the map.
 
-![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/virtual_slam.png =480x320)
+![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/virtual_slam.png)
 
 ```
 $ rosrun map_server map_saver -f ~/map
 ```
 
-![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/map.png =480x320)
+![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/map.png)
 
 > The saved map.pgm file
 
@@ -173,7 +173,7 @@ Follow the instructions below instead of **Launching Simulation World** section 
     $ roslaunch turtlebot3_gazebo multi_turtlebot3.launch
     ```
     
-    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_house_slam.png =480x320)
+    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_house_slam.png)
     
 3.  Launch SLAM for each TurtleBot3
     
@@ -203,7 +203,7 @@ Follow the instructions below instead of **Launching Simulation World** section 
     $ ROS_NAMESPACE=tb3_2 rosrun turtlebot3_teleop turtlebot3_teleop_key
     ```
     
-    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_house_slam1.png =480x320)
+    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_house_slam1.png)
     
 7.  Save the Map
     
@@ -264,15 +264,6 @@ The contents in e-Manual are subject to be updated without a prior notice. There
 
 To use `turtlebot3_fake_node`, you need the `turtlebot3_simulation` metapackage. Install the package as shown in the following command.
 
-**TIP**: The terminal application can be found with the Ubuntu search icon on the top left corner of the screen. The shortcut key for running the terminal is `Ctrl`\-`Alt`\-`T`.
-
-**NOTE**: The `turtlebot3_simulation` metapackage requires `turtlebot3` metapackage and `turtlebot3_msgs` package as a prerequisite. If you didn’t install it in the [Install Dependent ROS Packages of PC Setup](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/#install-dependent-ros-1-packages-1) section, install it first.
-
-```
-$ cd ~/catkin_ws/src/
-$ git clone -b kinetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
-$ cd ~/catkin_ws && catkin_make
-```
 
 To launch the virtual robot, execute the `turtlebot3_fake.launch` file in the `turtlebot3_fake` package as shown below. The `turtlebot3_fake` is a very simple simulation node that can be run without having an actual robot. You can even control the virtual TurtleBot3 in RViz with a teleoperation node.
 
