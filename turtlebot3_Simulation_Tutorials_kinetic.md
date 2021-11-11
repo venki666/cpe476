@@ -1,6 +1,8 @@
 ## Setup
 ### [Install Dependent ROS Packages](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/#install-dependent-ros-packages)[](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/#install-dependent-ros-packages)
 
+Change all to -melodic- if your version of ROS is Melodic
+
 ```
 $ sudo apt-get install ros-kinetic-joy ros-kinetic-teleop-twist-joy \
   ros-kinetic-teleop-twist-keyboard ros-kinetic-laser-proc \
