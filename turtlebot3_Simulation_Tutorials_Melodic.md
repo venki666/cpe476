@@ -1,4 +1,4 @@
-
+## Setup
 ### [Install Dependent ROS Packages](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/#install-dependent-ros-packages)[](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/#install-dependent-ros-packages)
 
 ```
@@ -39,26 +39,6 @@ Set the default `TURTLEBOT3_MODEL` name to your model. Enter the below command t
     $ echo "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc
     ```
     
-
--   **Gazebo Tutorials** : [http://gazebosim.org/tutorials](http://gazebosim.org/tutorials)
-
-## [Gazebo Simulation](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#gazebo-simulation)[](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#gazebo-simulation)
-
-
-The contents in e-Manual can be updated without a prior notice and video contents could be outdated.
-
-This Gazebo Simulation uses **ROS Gazebo package**, therefore, proper Gazebo version for ROS1 Kinetic has to be installed before running this instruction.
-
-### [Install Simulation Package](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#install-simulation-package)[](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#install-simulation-package)
-
-The **TurtleBot3 Simulation Package** requires `turtlebot3` and `turtlebot3_msgs` packages as prerequisite. Without these prerequisite packages, the Simulation cannot be launched.  
-Please follow the [PC Setup](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/) instructions if you did not install required packages and dependent packages.
-
-```
-$ cd ~/catkin_ws/src/
-$ git clone -b kinetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
-$ cd ~/catkin_ws && catkin_make
-```
 
 ### [Launch Simulation World](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#launch-simulation-world)[](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#launch-simulation-world)
 
@@ -231,132 +211,6 @@ Follow the instructions below instead of **Launching Simulation World** section 
     $ rosrun map_server map_saver -f ~/map
     ``` 
 
-When SLAM in Gazebo simulator, you can select or create various environments and robot models in virtual world. Other than preparing simulation environment instead of bringing up the robot, SLAM Simulation is pretty similar to that of [SLAM](https://emanual.robotis.com/docs/en/platform/turtlebot3/slam/#slam) with the actual TurtleBot3.
-
-The following instructions require prerequisites from the previous sections, so please review to the [Simulation](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/) section first.
-
-### Launch Simulation World[](https://emanual.robotis.com/docs/en/platform/turtlebot3/slam_simulation/#launch-simulation-world-1)
-
-Three Gazebo environments are prepared, but for creating a map with SLAM, it is recommended to use either **TurtleBot3 World** or **TurtleBot3 House**.  
-Use one of the following commands to load the Gazebo environment.
-
-In this instruction, TurtleBot3 World will be used.  
-Please use the proper keyword among `burger`, `waffle`, `waffle_pi` for the `TURTLEBOT3_MODEL` parameter.
-
-```
-$ export TURTLEBOT3_MODEL=burger
-$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
-```
-
- ![](https://emanual.robotis.com/assets/images/icon_unfold.png) Read more about **How to load TurtleBot3 House**
-
-```
-$ export TURTLEBOT3_MODEL=burger
-$ roslaunch turtlebot3_gazebo turtlebot3_house.launch
-``` 
-
-### Run SLAM Node[](https://emanual.robotis.com/docs/en/platform/turtlebot3/slam_simulation/#run-slam-node-1)
-
-Open a new terminal from Remote PC with `Ctrl` + `Alt` + `T` and run the SLAM node. Gmapping SLAM method is used by default.  
-Please use the proper keyword among `burger`, `waffle`, `waffle_pi` for the `TURTLEBOT3_MODEL` parameter.
-
-```
-$ export TURTLEBOT3_MODEL=burger
-$ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
-```
-
-### Run Teleoperation Node[](https://emanual.robotis.com/docs/en/platform/turtlebot3/slam_simulation/#run-teleoperation-node-1)
-
-Open a new terminal from Remote PC with `Ctrl` + `Alt` + `T` and run the teleoperation node from the Remote PC.  
-Please use the proper keyword among `burger`, `waffle`, `waffle_pi` for the `TURTLEBOT3_MODEL` parameter.
-
-```
-$ export TURTLEBOT3_MODEL=burger
-$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
-
- Control Your TurtleBot3!
- ---------------------------
- Moving around:
-        w
-   a    s    d
-        x
-
- w/x : increase/decrease linear velocity
- a/d : increase/decrease angular velocity
- space key, s : force stop
-
- CTRL-C to quit
-```
-
-### Save Map[](https://emanual.robotis.com/docs/en/platform/turtlebot3/slam_simulation/#save-map-1)
-
-When the map is created successfully, open a new terminal from Remote PC with `Ctrl` + `Alt` + `T` and save the map.
-
-![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/virtual_slam.png)
-
-```
-$ rosrun map_server map_saver -f ~/map
-```
-
-![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/map.png)
-
-> The saved map.pgm file
-
- ![](https://emanual.robotis.com/assets/images/icon_unfold.png) Read more about **How to SLAM with multiple TurtleBot3**
-
-In order to create a map with multiple robots, **multirobot-map-merge** package is required.  
-Follow the instructions below instead of **Launching Simulation World** section of this page to operate multiple TurtleBot3.
-
-1.  Install necessary package
-    
-    ```
-    $ sudo apt-get install ros-melodic-multirobot-map-merge
-    ```
-    
-2.  Load multiple TurtleBot3 in TurtleBot3 House.  
-    These loaded turtlebot3s are set initial position and orientation.
-    
-    ```
-    $ roslaunch turtlebot3_gazebo multi_turtlebot3.launch
-    ```
-    
-    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_house_slam.png)
-    
-3.  Launch SLAM for each TurtleBot3
-    
-    ```
-    $ ROS_NAMESPACE=tb3_0 roslaunch turtlebot3_slam turtlebot3_gmapping.launch set_base_frame:=tb3_0/base_footprint set_odom_frame:=tb3_0/odom set_map_frame:=tb3_0/map
-    $ ROS_NAMESPACE=tb3_1 roslaunch turtlebot3_slam turtlebot3_gmapping.launch set_base_frame:=tb3_1/base_footprint set_odom_frame:=tb3_1/odom set_map_frame:=tb3_1/map
-    $ ROS_NAMESPACE=tb3_2 roslaunch turtlebot3_slam turtlebot3_gmapping.launch set_base_frame:=tb3_2/base_footprint set_odom_frame:=tb3_2/odom set_map_frame:=tb3_2/map
-    ```
-    
-4.  Merge map data from each TurtleBot3
-    
-    ```
-    $ roslaunch turtlebot3_gazebo multi_map_merge.launch
-    ```
-    
-5.  Launch RViz
-    
-    ```
-    $ rosrun rviz rviz -d `rospack find turtlebot3_gazebo`/rviz/multi_turtlebot3_slam.rviz
-    ```
-    
-6.  Operate each TurtleBot3
-    
-    ```
-    $ ROS_NAMESPACE=tb3_0 rosrun turtlebot3_teleop turtlebot3_teleop_key
-    $ ROS_NAMESPACE=tb3_1 rosrun turtlebot3_teleop turtlebot3_teleop_key
-    $ ROS_NAMESPACE=tb3_2 rosrun turtlebot3_teleop turtlebot3_teleop_key
-    ```
-    
-    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_house_slam1.png)
-    
-7.  Save the Map
-    
-    ```
-    $ rosrun map_server map_saver -f ~/map
-    ``` 
 
 ## Navigation Simulation
 Just like the SLAM in Gazebo simulator, you can select or create various environments and robot models in virtual Navigation world. However, proper map has to be prepared before running the Navigation. Other than preparing simulation environment instead of bringing up the robot, Navigation Simulation is pretty similar to that of [Navigation](https://emanual.robotis.com/docs/en/platform/turtlebot3/navigation/#navigation).
