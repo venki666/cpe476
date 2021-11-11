@@ -47,7 +47,7 @@ Three simulation environments are prepared for TurtleBot3. Please select one of 
 **Please make sure to completely terminate other Simulation world before launching a new world.**
 
 1.  Empty World  
-    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_empty_world.png =480x320)
+    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_empty_world.png){:height="480px" width="320px"}
     
     ```
     $ export TURTLEBOT3_MODEL=burger
