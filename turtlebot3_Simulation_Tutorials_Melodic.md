@@ -47,7 +47,7 @@ Three simulation environments are prepared for TurtleBot3. Please select one of 
 **Please make sure to completely terminate other Simulation world before launching a new world.**
 
 1.  Empty World  
-    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_empty_world.png)
+    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_empty_world.png =480x320)
     
     ```
     $ export TURTLEBOT3_MODEL=burger
@@ -55,7 +55,7 @@ Three simulation environments are prepared for TurtleBot3. Please select one of 
     ```
     
 2.  TurtleBot3 World  
-    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_world_bugger.png 480x320)
+    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_world_bugger.png =480x320)
     
     ```
     $ export TURTLEBOT3_MODEL=waffle
@@ -63,7 +63,7 @@ Three simulation environments are prepared for TurtleBot3. Please select one of 
     ```
     
 3.  TurtleBot3 House  
-    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_house.png 480x320)
+    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_house.png =480x320)
     
     ```
     $ export TURTLEBOT3_MODEL=waffle_pi
@@ -145,13 +145,13 @@ $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 
 When the map is created successfully, open a new terminal from Remote PC with `Ctrl` + `Alt` + `T` and save the map.
 
-![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/virtual_slam.png 480x320)
+![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/virtual_slam.png =480x320)
 
 ```
 $ rosrun map_server map_saver -f ~/map
 ```
 
-![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/map.png 480x320)
+![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/map.png =480x320)
 
 > The saved map.pgm file
 
@@ -173,7 +173,7 @@ Follow the instructions below instead of **Launching Simulation World** section 
     $ roslaunch turtlebot3_gazebo multi_turtlebot3.launch
     ```
     
-    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_house_slam.png 480x320)
+    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_house_slam.png =480x320)
     
 3.  Launch SLAM for each TurtleBot3
     
@@ -203,7 +203,7 @@ Follow the instructions below instead of **Launching Simulation World** section 
     $ ROS_NAMESPACE=tb3_2 rosrun turtlebot3_teleop turtlebot3_teleop_key
     ```
     
-    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_house_slam1.png)
+    ![](https://emanual.robotis.com/assets/images/platform/turtlebot3/simulation/turtlebot3_house_slam1.png =480x320)
     
 7.  Save the Map
     
